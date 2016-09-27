@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * Controller for basic theme
+ */
+
 namespace app\controllers;
 
 use yii\web\Controller;
@@ -27,5 +31,7 @@ class UsersController extends Controller
 			'pagination' => $pagination,
 		]);
 	}
+
+	public $modelClass = 'app\models\Users';
 }
 
