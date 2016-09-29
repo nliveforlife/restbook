@@ -3,7 +3,7 @@
 // use yii\helpers\Html;
 use yii\widgets\LinkPager;
 ?>
-	<h1>Users list</h1>
+	<h1>User Serach Result</h1>
 	<ul>
 		<?php foreach ($users as $user): ?>
 			<li>

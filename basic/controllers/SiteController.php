@@ -60,7 +60,16 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+
+		// create curl resource
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "http://restbook.neo.click/users");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$output = curl_exec($ch);
+		curl_close($ch);
+
+		return $this->render('index',  ['message' => $output]);
+
     }
 
     /**

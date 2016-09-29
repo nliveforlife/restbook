@@ -47,7 +47,31 @@ $config = [
 			'enableStrictParsing' => true,
 			'showScriptName' => false,
 			'rules' => [
-				['class' => 'yii\rest\UrlRule', 'controller' => 'user'],
+				['class' => 'yii\rest\UrlRule',
+					'controller' => 'user'],
+				[
+					'pattern' => 'api/users',
+					'route' => 'user'
+				],
+				[
+					'pattern' => 'users/search',
+					'route' => 'users/search'
+				],
+				[
+					'pattern' => 'site/<tag>',
+					'route' => 'site/<tag>'
+				],
+				[
+					'pattern' => '',
+					'route' => 'site/index'
+				],
+
+
+				/*	[
+					'pattern' => 'posts/<page:\d+>/<tag>',
+					'route' => 'post/index',
+					'defaults' => ['page' => 1, 'tag' => ''],
+				], */
 			],
 		]
 
