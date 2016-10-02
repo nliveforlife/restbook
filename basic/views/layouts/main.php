@@ -27,7 +27,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'Phone Book',
+        'brandLabel' => 'Phone Book Web',
      //   'brandUrl' => Yii::$app->homeUrl,
         'brandUrl' => ['/site/index'],
         'options' => [

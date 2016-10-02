@@ -51,22 +51,18 @@ $config = [
 					'controller' => 'user'],
 
 				[
-					'pattern' => '___gggg___api/users',
+					'pattern' => '/users',
 					'route' => 'user'
 				],
-				/*
+				[	'pattern' => 'users/', 'route' => 'user' ],
 				[
 					//'pattern' => 'api/users/search/<tag>',
-					'pattern' => 'api/users/search/<tag>',
+					'pattern' => 'users/search/<tag>',
 					'route' => 'user'
-				],  */
-				[
-					'pattern' => 'site/<tag>',
-					'route' => 'site/<tag>'
 				],
 				[
 					'pattern' => '/',
-					'route' => 'site/index'
+					'route' => 'user'
 				],
 
 
