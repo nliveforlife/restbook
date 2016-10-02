@@ -38,8 +38,8 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Contacts', 'url' => ['/site/index']],
-            ['label' => 'Add', 'url' => ['/site/say']],
-            ['label' => 'Dell', 'url' => ['/site/about']],
+            ['label' => 'Add', 'url' => ['/site/adduser']],
+            ['label' => 'Dell', 'url' => ['/site/rmuser']],
             ['label' => 'Search', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]

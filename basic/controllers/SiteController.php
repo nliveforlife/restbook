@@ -9,6 +9,8 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
+use yii\helpers\Json;
+
 class SiteController extends Controller
 {
     /**
@@ -60,16 +62,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-
 		// create curl resource
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, "http://restbook.neo.click/users");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		$output = curl_exec($ch);
+		$out = curl_exec($ch);
 		curl_close($ch);
-
+		$output = Json::decode($out, true);
 		return $this->render('index',  ['message' => $output]);
-
     }
 
     /**
@@ -127,13 +127,23 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionAbout()
+    public function actionAdduser()
     {
-        return $this->render('about');
-    }
+		if (!Yii::$app->user->isGuest) {
+			return $this->goHome();
+		}
 
-	public function actionSay($message = 'Привет')
+		$model = new LoginForm();
+		if ($model->load(Yii::$app->request->post()) && $model->login()) {
+			return $this->goBack();
+		}
+		return $this->render('adduser', [
+			'model' => $model,
+		]);
+	}
+
+	public function actionRmuser($message = 'Привет')
 	{
-		return $this->render('say', ['message' => $message]);
+		return $this->render('rmuser', ['message' => $message]);
 	}
 }
