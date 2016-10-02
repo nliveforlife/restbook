@@ -27,6 +27,11 @@ class UserController extends ActiveController
 				'modelClass' => $this->modelClass,
 				'checkAccess' => [$this, 'checkAccess'],
 			],
+			'search' => [
+				'class' => 'yii\rest\SearchAction',
+				'modelClass' => $this->modelClass,
+				'checkAccess' => [$this, 'checkAccess'],
+			],
 			'create' => [
 				'class' => 'yii\rest\CreateAction',
 				'modelClass' => $this->modelClass,

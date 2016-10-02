@@ -4,7 +4,7 @@ use yii\widgets\ActiveForm;
 
 $form = ActiveForm::begin([
 	'action' => '/users',
-	'method' => 'get',
+	'method' => 'post',
 //	'id' => 'add-user',
 	'options' => ['class' => 'form-horizontal'],
 ])
