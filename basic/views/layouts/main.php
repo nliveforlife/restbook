@@ -28,7 +28,6 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => 'Phone Book Web',
-     //   'brandUrl' => Yii::$app->homeUrl,
         'brandUrl' => ['/site/index'],
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -39,8 +38,10 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Contacts', 'url' => ['/site/index']],
             ['label' => 'Add', 'url' => ['/site/adduser']],
-            ['label' => 'Dell', 'url' => ['/site/rmuser']],
-            ['label' => 'Search', 'url' => ['/site/contact']],
+          //  ['label' => 'Remove', 'url' => ['/site/rmuser']],
+          //  ['label' => 'Search', 'url' => ['/site/contact']],
+
+            /*
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
@@ -52,7 +53,7 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            )    */
         ],
     ]);
     NavBar::end();

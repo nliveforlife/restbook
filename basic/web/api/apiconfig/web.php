@@ -49,10 +49,13 @@ $config = [
 			'rules' => [
 				['class' => 'yii\rest\UrlRule',
 					'controller' => 'user',
-					'tokens' => [ '{mytoken}' => '<mytoken>/<name>'],
-					'extraPatterns' => [
-						'GET {mytoken}'  => 'search',
-					],
+				],
+				['class' => 'yii\rest\UrlRuleS',
+					'controller' => 'user',
+						'tokens' => [ '{mytoken}' => '<mytoken>/<name>'],
+						'extraPatterns' => [
+							'GET {mytoken}'  => 'search',
+						],
 				],
 				[	'pattern' => '/users', 'route' => 'user' ],
 				[	'pattern' => 'users/', 'route' => 'user' ],

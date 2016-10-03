@@ -49,17 +49,6 @@ $config = [
 			'rules' => [
 				['class' => 'yii\rest\UrlRule',
 					'controller' => 'user'],
-
-				[
-					'pattern' => '___gggg___api/users',
-					'route' => 'user'
-				],
-				/*
-				[
-					//'pattern' => 'api/users/search/<tag>',
-					'pattern' => 'api/users/search/<tag>',
-					'route' => 'user'
-				],  */
 				[
 					'pattern' => 'site/<tag>',
 					'route' => 'site/<tag>'
@@ -68,13 +57,6 @@ $config = [
 					'pattern' => '/',
 					'route' => 'site/index'
 				],
-
-
-				/*	[
-					'pattern' => 'posts/<page:\d+>/<tag>',
-					'route' => 'post/index',
-					'defaults' => ['page' => 1, 'tag' => ''],
-				], */
 			],
 		]
 

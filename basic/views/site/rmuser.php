@@ -1,18 +1,21 @@
 <?php
-
-/* @var $this yii\web\View */
-
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
-$this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
+$form = ActiveForm::begin([
+    'action' => '/api/users',
+    'method' => 'delete',
+    'options' => ['class' => 'form-horizontal'],
+])
 ?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="col-md-4">
+    <p>Имя: <input type="text" class="form-control" name="name" /></p>
 
-    <p>
-        This is the About page. You may modify the following file to customize its content:
-    </p>
+    <div class="form-group">
+        <div class="col-lg-offset-1 col-lg-11">
+            <?= Html::submitButton('Удалить контакт', ['class' => 'btn btn-primary']) ?>
+        </div>
+    </div>
+    <?php ActiveForm::end() ?>
 
-    <code><?= __FILE__ ?></code>
 </div>
