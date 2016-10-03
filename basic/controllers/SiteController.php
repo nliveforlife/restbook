@@ -64,7 +64,7 @@ class SiteController extends Controller
     {
 		// create curl resource
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "http://restbook.neo.click/users");
+		curl_setopt($ch, CURLOPT_URL, "http://restbook.neo.click/api/users");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		$out = curl_exec($ch);
 		curl_close($ch);
@@ -129,6 +129,8 @@ class SiteController extends Controller
      */
     public function actionAdduser()
     {
+
+    	/*
 		if (!Yii::$app->user->isGuest) {
 			return $this->goHome();
 		}
@@ -136,10 +138,10 @@ class SiteController extends Controller
 		$model = new LoginForm();
 		if ($model->load(Yii::$app->request->post()) && $model->login()) {
 			return $this->goBack();
-		}
-		return $this->render('adduser', [
-			'model' => $model,
-		]);
+		} */
+
+	//	return $this->render('adduser', [ 'model' => $model, ]);
+		return $this->render('adduser');
 	}
 
 	public function actionRmuser($message = 'Привет')

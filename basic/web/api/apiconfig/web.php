@@ -48,18 +48,27 @@ $config = [
 			'showScriptName' => false,
 			'rules' => [
 				['class' => 'yii\rest\UrlRule',
-					'controller' => 'user'],
+					'controller' => 'user',
+					//'tokens' => [ '{mytoken}' => '<mytoken::\\d[\\d,]*>'],
+					//'tokens' => [ '{mytoken}' => '<mytoken>'],
+					'tokens' => [ '{mytoken}' => '<mytoken>/<name>'],
+					'extraPatterns' => [
+						'GET {mytoken}'  => 'search',
+					//	'defaults' => ['id' => 'id', 'tag' => ''],
+					],
+				],
 
 				[
 					'pattern' => '/users',
 					'route' => 'user'
 				],
 				[	'pattern' => 'users/', 'route' => 'user' ],
+					/*
 				[
-					//'pattern' => 'api/users/search/<tag>',
-					'pattern' => 'users/search/<tag>',
-					'route' => 'user'
-				],
+					'pattern' => "api/users/searchh/<id:\d+>",
+					//'pattern' => 'users/search',
+					'route' => 'search'
+				], */
 				[
 					'pattern' => '/',
 					'route' => 'user'

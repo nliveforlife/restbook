@@ -3,12 +3,15 @@
  * Controller for Rest Service
  */
 
+//namespace app\controllers;
 namespace app\controllers;
+
 
 use yii\rest\ActiveController;
 
 class UserController extends ActiveController
 {
+	// public $modelClass = 'app\models\Users';
 	public $modelClass = 'app\models\Users';
 
 	/**
@@ -19,9 +22,20 @@ class UserController extends ActiveController
 		return  [
 			'index' => [
 				'class' => 'yii\rest\IndexAction',
+				//'class' => 'api\controllers\rest\IndexAction',
+				//'class' => 'api\controllers\rest\Custom',
 				'modelClass' => $this->modelClass,
 				'checkAccess' => [$this, 'checkAccess'],
 			],
+			'custom' => [
+				//'class' => 'yii\rest\IndexAction',
+				//'class' => 'api\controllers\rest\IndexAction',
+				'class' => 'api\controllers\rest\Custom',
+				'modelClass' => $this->modelClass,
+				'checkAccess' => [$this, 'checkAccess'],
+			],
+
+
 			'view' => [
 				'class' => 'yii\rest\ViewAction',
 				'modelClass' => $this->modelClass,

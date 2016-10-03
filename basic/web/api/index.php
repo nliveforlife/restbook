@@ -10,4 +10,6 @@ require(__DIR__ . '/../../vendor/yiisoft/yii2/Yii.php');
 
 $config = require(__DIR__ . '/apiconfig/web.php');
 
+Yii::setAlias('@api', '/api');
+
 (new yii\web\Application($config))->run();

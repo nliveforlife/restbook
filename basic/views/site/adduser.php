@@ -3,9 +3,8 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 $form = ActiveForm::begin([
-	'action' => '/users',
+	'action' => '/api/users',
 	'method' => 'post',
-//	'id' => 'add-user',
 	'options' => ['class' => 'form-horizontal'],
 ])
 ?>
@@ -21,14 +20,3 @@ $form = ActiveForm::begin([
 <?php ActiveForm::end() ?>
 
 </div>
-
-<!--
-----------------------------------
-
-<form action="action.php" method="post">
-	<p>Ваше имя: <input type="text" name="name" /></p>
-	<p>Ваш возраст: <input type="text" name="age" /></p>
-	<p><input type="submit" /></p>
-</form>
-
--->

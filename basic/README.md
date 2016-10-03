@@ -7,10 +7,22 @@ REQUIREMENTS
 
 The minimum requirement by this project template that your Web server supports PHP 5.4.0.
 
-You can then access the application through the following URL:
 
+DocumentRoot:
+-------------
 ~~~
 http://localhost/basic/web/
 ~~~
 
+WEB Client URL:
+---------------
+~~~
+http://localhost/
+~~~
 
+
+API URL:
+---------
+~~~
+http://localhost/api/users
+~~~
