@@ -22,7 +22,29 @@ http://localhost/
 
 
 API URL:
----------
-~~~
-http://localhost/api/users
-~~~
+   ---------
+   ~~~
+   http://localhost/api/users
+   ~~~
+   
+   
+Verbs:
+   ---------
+   ~~~
+   GET для получения и поиска данных
+   
+   POST для добавления данных
+   
+   PUT для обновления данных
+   
+   DELETE для удаления данных.
+   
+   GET api/users - возвращает всех юзеров
+   
+   GET /api/users/search/JohnDoe - ищет пользователя с именем JohnDoe
+   
+   POST /api/users  - добавляет пользователя
+   
+   PUT /api/users/13 - обновляет пользователя с таким ИД
+   
+   ~~~
