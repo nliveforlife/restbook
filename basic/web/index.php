@@ -10,8 +10,5 @@ require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 
 $config = require(__DIR__ . '/../config/web.php');
 
-Yii::setAlias('@api', '/api');
-
-//Yii::$classMap['Class1'] = 'path/to/Class1.php';
 
 (new yii\web\Application($config))->run();
